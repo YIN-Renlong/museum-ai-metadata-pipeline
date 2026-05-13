@@ -1,0 +1,24 @@
+{
+    "dc:identifier": "img_demo3.jpg",
+    "dc:title": "Loaded touring bicycle beside a rural field",
+    "dc:description": "A color photograph shows a touring bicycle parked in the foreground against a metal roadside guardrail. The bicycle is heavily outfitted for travel, with front and rear racks, panniers, a rolled sleeping mat, water bottles, and additional bags secured with straps and cords. Behind the road barrier stretches a dry golden agricultural landscape, likely harvested grain fields, with low hills, scrubby vegetation, and pale exposed earth formations in the middle distance. The sky is clear blue with light wisps of cloud, suggesting bright daytime conditions in a rural or semi-arid countryside setting.",
+    "dc:subject": [
+        "touring bicycle",
+        "bicycle travel",
+        "cycle touring",
+        "roadside",
+        "guardrail",
+        "panniers",
+        "camping gear",
+        "rural landscape",
+        "agricultural fields",
+        "wheat field",
+        "hills",
+        "summer",
+        "outdoor recreation",
+        "travel photography"
+    ],
+    "ai_provenance": {
+        "reasoning_effort": "medium"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "dc:identifier": "img_demo3.jpg",
+    "dc:title": "Touring bicycle beside a rural guardrail",
+    "dc:description": "A loaded touring bicycle is parked in the foreground against a roadside metal guardrail, with a rusted rail above it. The bicycle carries multiple travel items, including rear panniers, a rolled sleeping mat or foam pad on the front, water bottles, and strapped gear across the rear rack. Beyond the road barrier stretches a dry, golden agricultural landscape of harvested fields, low hills, scrubby vegetation, and pale exposed earth mounds. The sky is clear blue with light wisps of cloud, suggesting a warm, arid rural setting.",
+    "dc:subject": [
+        "touring bicycle",
+        "bicycle travel",
+        "rural landscape",
+        "roadside",
+        "guardrail",
+        "agricultural fields",
+        "dry countryside",
+        "cycling equipment",
+        "panniers",
+        "summer landscape"
+    ],
+    "ai_provenance": {
+        "reasoning_effort": "medium"
+    }
+}

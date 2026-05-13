@@ -1,0 +1,20 @@
+{
+    "dc:identifier": "img_demo1.jpg",
+    "dc:title": "Cyclist on a wooded rural road near Isola Farnese",
+    "dc:description": "Color photograph of a sunlit dirt or gravel road cutting through dense green woodland. A single person stands near the center-right of the road beside a loaded touring bicycle fitted with rear panniers and gear. The path is shaded by overhanging trees and high earthen banks, forming a tunnel-like corridor that recedes into the distance. On the right side, a wire fence and a posted sign read \"Propriet\u00e0 Universit\u00e0 Agraria di Isola Farnese,\" indicating private or institutional land. Dry leaves and dappled sunlight are visible across the road surface.",
+    "dc:subject": [
+        "woodland road",
+        "touring bicycle",
+        "cyclist",
+        "rural landscape",
+        "Isola Farnese",
+        "travel photography",
+        "dirt road",
+        "forest path",
+        "outdoor recreation",
+        "posted sign"
+    ],
+    "ai_provenance": {
+        "reasoning_effort": "medium"
+    }
+}

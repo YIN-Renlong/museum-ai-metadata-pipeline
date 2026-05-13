@@ -1,0 +1,20 @@
+{
+    "dc:identifier": "img_demo2.jpg",
+    "dc:title": "Street view beside historic stone walls and domed church",
+    "dc:description": "Color street scene photographed from a low vantage point behind bicycle or scooter handlebars, with the foreground intentionally out of focus. A curving urban road runs alongside a long historic stone wall with crenellated sections on the left. Behind the wall rises a church or civic building with a prominent domed roof and small lantern. Several vehicles travel along the road, including a blurred blue car passing at left and smaller cars and a van farther ahead. A pedestrian walks on the sidewalk near the wall. On the right side of the street are trees, a lamppost, bollards, and low commercial or residential buildings with an outdoor seating area. The image is sunlit with a clear blue sky and has the grain and color characteristics of a digitized color negative.",
+    "dc:subject": [
+        "urban street",
+        "historic architecture",
+        "stone wall",
+        "domed church",
+        "road traffic",
+        "bicycle handlebars",
+        "cityscape",
+        "pedestrian",
+        "trees",
+        "color negative"
+    ],
+    "ai_provenance": {
+        "reasoning_effort": "medium"
+    }
+}

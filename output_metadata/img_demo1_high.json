@@ -1,0 +1,18 @@
+{
+    "dc:identifier": "img_demo1.jpg",
+    "dc:title": "Cyclist on shaded wooded road near Isola Farnese",
+    "dc:description": "Color photograph of a sunlit, unpaved rural road passing through dense green woodland, with trees forming a shaded canopy and steep earthen banks along both sides. A person with a blurred face stands near the right side of the road beside a loaded touring bicycle fitted with panniers and gear. Dappled light and shadows fall across the pale road surface. On the right, a chain-link fence and a posted sign reading \"PROPRIET\u00c0 UNIVERSIT\u00c0 AGRARIA DI ISOLA FARNESE\" are partially visible among vegetation.",
+    "dc:subject": [
+        "wooded roads",
+        "bicycle touring",
+        "cyclists",
+        "unpaved roads",
+        "trees",
+        "rural landscapes",
+        "Isola Farnese",
+        "outdoor photography"
+    ],
+    "ai_provenance": {
+        "reasoning_effort": "medium"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "dc:identifier": "img_demo4.jpg",
+    "dc:title": "Loaded touring bicycle beside rural roadway",
+    "dc:description": "Color photograph of a quiet two-lane paved road receding into the distance through a dry rural landscape. In the left foreground, a loaded touring bicycle with rear panniers and gear strapped to the frame is parked against a metal guardrail beside a concrete retaining wall. Vegetation lines both sides of the road, with fencing and open fields to the right and low hills or mountains visible on the horizon under a pale blue sky. The scene suggests bicycle travel or a roadside pause in a warm, arid countryside.",
+    "dc:subject": [
+        "touring bicycle",
+        "rural road",
+        "bicycle travel",
+        "guardrail",
+        "countryside",
+        "landscape",
+        "roadside",
+        "hills",
+        "travel photography"
+    ],
+    "ai_provenance": {
+        "reasoning_effort": "medium"
+    }
+}

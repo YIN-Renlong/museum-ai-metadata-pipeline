@@ -1,0 +1,13 @@
+Filename,Resolution,Reasoning_Effort,Time_Seconds,Prompt_Tokens,Completion_Tokens,Total_Cost_USD
+img_demo4.jpg,1280x853,none,7.54,1179,267,0.013904999999999999
+img_demo4.jpg,1280x853,medium,11.17,1179,260,0.013694999999999999
+img_demo4.jpg,1280x853,high,10.85,1179,295,0.014745
+img_demo2.jpg,1280x853,none,11.86,1179,302,0.014955
+img_demo2.jpg,1280x853,medium,12.9,1179,264,0.013815
+img_demo2.jpg,1280x853,high,12.51,1179,353,0.016485
+img_demo3.jpg,1280x853,none,6.62,1179,278,0.014235
+img_demo3.jpg,1280x853,medium,12.22,1179,269,0.013964999999999998
+img_demo3.jpg,1280x853,high,9.89,1179,391,0.017625000000000002
+img_demo1.jpg,1280x1024,none,6.65,978,294,0.01371
+img_demo1.jpg,1280x1024,medium,6.85,978,322,0.01455
+img_demo1.jpg,1280x1024,high,11.22,978,504,0.02001

@@ -1,0 +1,20 @@
+{
+    "dc:identifier": "img_demo1.jpg",
+    "dc:title": "Cyclist on a shaded rural road near Isola Farnese",
+    "dc:description": "Color negative showing a person standing on a pale gravel or dirt road bordered by dense green trees and undergrowth. The road forms a shaded, tunnel-like passage through the vegetation, with bright sunlight filtering through the canopy. A loaded touring bicycle with panniers and gear is parked to the person's right against the roadside bank. On the far right, a fence bears an Italian sign reading \"Propriet\u00e0 Universit\u00e0 Agraria di Isola Farnese,\" indicating property of the agrarian university of Isola Farnese. The scene suggests a bicycle touring stop or rest along a rural wooded route.",
+    "dc:subject": [
+        "bicycle touring",
+        "rural roads",
+        "wooded landscape",
+        "cyclist",
+        "travel photography",
+        "Isola Farnese",
+        "Italy",
+        "outdoor recreation",
+        "dirt road",
+        "touring bicycle"
+    ],
+    "ai_provenance": {
+        "reasoning_effort": "medium"
+    }
+}

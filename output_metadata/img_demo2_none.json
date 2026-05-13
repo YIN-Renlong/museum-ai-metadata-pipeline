@@ -1,0 +1,19 @@
+{
+    "dc:identifier": "img_demo2.jpg",
+    "dc:title": "Street view beside historic stone walls and domed church",
+    "dc:description": "Color negative-style street scene showing an urban roadway running alongside large historic stone fortification walls on the left. A church or civic building with a prominent ribbed dome rises behind the wall near the center of the image. In the foreground, out-of-focus bicycle handlebars and a saddle frame the lower portion of the view, suggesting the photograph was taken from or near a parked bicycle. Cars and a small van travel along the curved road, with a pedestrian visible on the sidewalk beside the wall. On the right, a leafy tree, streetlamp, sidewalk, and outdoor seating area border the street. The image is brightly lit under a clear blue sky, with visible film grain and warm late-afternoon sunlight.",
+    "dc:subject": [
+        "urban streetscape",
+        "historic architecture",
+        "stone walls",
+        "church dome",
+        "road traffic",
+        "bicycle",
+        "pedestrian",
+        "street trees",
+        "color negative"
+    ],
+    "ai_provenance": {
+        "reasoning_effort": "medium"
+    }
+}
