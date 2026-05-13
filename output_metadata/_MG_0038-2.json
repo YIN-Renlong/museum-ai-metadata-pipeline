@@ -1,0 +1,22 @@
+{
+    "dc:identifier": "_MG_0038-2.jpg",
+    "dc:title": "Cyclist on a shaded rural road beside a property sign",
+    "dc:description": "A sunlit rural dirt or gravel road runs through a densely wooded area, forming a shaded tunnel of trees and foliage. At center-left, a person stands on the roadside facing the camera, wearing a sleeveless top, cropped dark trousers, socks, and shoes; the face is obscured or blurred. To the right of the person, a touring bicycle is leaned against vegetation and appears loaded with panniers, bags, and a cylindrical container. On the right side, behind a wire fence partially covered by ivy and dry leaves, a white sign reads \"PROPRIET\u00c0 UNIVERSIT\u00c0 AGRARIA DI ISOLA FARNESE.\" The scene has strong midday light with dappled shadows across the pale road surface and dense green vegetation surrounding the path.",
+    "dc:subject": [
+        "rural roads",
+        "bicycles",
+        "cycle touring",
+        "wooded landscapes",
+        "property signs",
+        "fences",
+        "Isola Farnese",
+        "outdoor recreation",
+        "vegetation",
+        "travel photography"
+    ],
+    "ai_provenance": {
+        "model_used": "azure-gpt-reasoning",
+        "review_status": "pending_human_review",
+        "warning": "Provisional AI data. Do not infer dates or names unless clearly visible."
+    }
+}
