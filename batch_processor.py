@@ -66,20 +66,32 @@ async def process_image_effort(client, filename, effort):
         "messages": [
             {
                 "role": "system",
-                "content": """You are an expert museum archivist processing digitized color negatives. 
+                "content": f"""You are an expert museum archivist processing digitized access copies (DIPs) of 35mm color negatives. 
+                Because the original physical negatives suffer from chemical fading over time, colors in these inverted images are unverified and may exhibit color shifts. Do not infer artistic intent from color casts.
+
                 Return ONLY a JSON object matching this exact structure:
-                {
-                    "dc:identifier": "filename",
+                {{
+                    "dc:identifier": "{filename}",
                     "dc:title": "Provisional title",
-                    "dc:description": "Detailed visual description.",
-                    "dc:subject": ["tag1", "tag2"],
-                    "ai_provenance": {"reasoning_effort": "effort_level"}
-                }"""
+                    "dc:description": "Detailed, objective visual description.",
+                    "dc:subject_LCSH": ["Broad Topic 1", "Broad Topic 2"],
+                    "dc:subject_AAT": ["Specific Object 1", "Specific Object 2"],
+                    "dc:subject_TGM": ["Visual Motif 1", "Photographic Genre 1"],
+                    "dc:subject_RKD": ["Art Historical Term 1", "Topographical Term 1"],
+                    "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
+                    "ai_provenance": {{"reasoning_effort": "{effort.upper()}"}}
+                }}
+                
+                CRITICAL INSTRUCTION FOR VOCABULARIES:
+                'dc:subject_LCSH': Use ONLY Library of Congress Subject Headings (broad concepts, historical themes, human activities).
+                'dc:subject_AAT': Use ONLY Getty Art & Architecture Thesaurus terms (specific physical objects, architectural elements, materials).
+                'dc:subject_TGM': Use ONLY Thesaurus for Graphic Materials terms (visual elements, photographic genres, compositional features).
+                'dc:subject_RKD': Use ONLY terms aligned with the RKD (Netherlands Institute for Art History) classification (European topographical descriptors, art historical iconography, structural classifications)."""
             },
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": f"Generate Dublin Core JSON for file: {filename}"},
+                    {"type": "text", "text": f"Generate Museum-Grade Dublin Core JSON for file: {filename}"},
                     {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}}
                 ]
             }
@@ -119,7 +131,6 @@ async def process_image_effort(client, filename, effort):
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(result_json, f, indent=4)
             
-        # THE NEW UPDATED PRINT STATEMENT:
         print(f"✅ Success: {output_filename} | Time: {process_time}s | Prompt T: {prompt_tokens} | Comp T: {completion_tokens} | Cost: ${total_cost:.5f}")
         
         stat = {
@@ -143,7 +154,7 @@ def generate_summary_markdown(stats):
     print(f"\n📝 Generating {SUMMARY_FILE}...")
     
     summary = {}
-    for effort in ["none", "medium", "high"]:
+    for effort in ["high"]:
         effort_stats = [s for s in stats if s and s["effort"] == effort]
         if effort_stats:
             avg_time = sum(s["time"] for s in effort_stats) / len(effort_stats)
@@ -168,7 +179,7 @@ def generate_summary_markdown(stats):
     md_content += "| Reasoning Effort | Avg Time/Image | Avg Prompt Tokens | Avg Completion Tokens | Avg Cost/Image | Extrapolated 100k Cost | Extrapolated 100k Time |\n"
     md_content += "|------------------|----------------|-------------------|-----------------------|----------------|------------------------|------------------------|\n"
     
-    for effort in ["none", "medium", "high"]:
+    for effort in ["high"]:
         if effort in summary:
             s = summary[effort]
             md_content += f"| **{effort.upper()}** | {s['avg_time']}s | {s['avg_prompt']} | {s['avg_comp']} | ${s['avg_cost']:.5f} | **${s['cost_100k']:,.2f}** | {s['time_100k_hours']:,.0f} hours |\n"
@@ -177,7 +188,7 @@ def generate_summary_markdown(stats):
         f.write(md_content)
 
 async def main():
-    print("🚀 Starting Archival Batch Processor...")
+    print("🚀 Starting Archival Batch Processor (LCSH, AAT, TGM, & RKD Enabled - HIGH REASONING ONLY)...")
     init_csv()
     
     files = [f for f in os.listdir(INPUT_DIR) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
@@ -189,7 +200,7 @@ async def main():
     try:
         async with httpx.AsyncClient() as client:
             for filename in files:
-                for effort in ["none", "medium", "high"]:
+                for effort in ["high"]:
                     stat = await process_image_effort(client, filename, effort)
                     if stat:
                         stats.append(stat)

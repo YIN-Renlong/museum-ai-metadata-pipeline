@@ -1,20 +1,34 @@
 {
     "dc:identifier": "img_demo4.jpg",
-    "dc:title": "Touring bicycle beside a rural road",
-    "dc:description": "Color photograph of a two-lane paved road receding into the distance through a dry rural landscape. In the left foreground, a loaded touring bicycle with panniers and gear is leaned against a metal guardrail beside a concrete retaining wall. Low shrubs and trees line the roadside, with fence posts and fields on the right and hazy hills or mountains visible in the background under a pale blue sky. The scene suggests a roadside stop during long-distance bicycle travel.",
-    "dc:subject": [
-        "touring bicycle",
-        "rural road",
-        "guardrail",
-        "roadside",
-        "cycling",
-        "travel",
-        "landscape",
-        "dry vegetation",
-        "hills",
-        "paved road"
+    "dc:title": "Touring bicycle beside rural road",
+    "dc:description": "Landscape-oriented color photograph showing a paved two-lane rural road receding toward the horizon. A loaded touring bicycle with panniers and gear is parked at the left shoulder, leaning against a metal guardrail beside a concrete retaining wall. Dry roadside grasses, shrubs, fence posts, and open fields line the road, with low hills or mountains visible in the distance beneath a mostly clear sky. No people or moving vehicles are visible.",
+    "dc:subject_LCSH": [
+        "Cycling",
+        "Roads",
+        "Rural transportation",
+        "Landscapes"
     ],
+    "dc:subject_AAT": [
+        "bicycles",
+        "panniers",
+        "guardrails",
+        "retaining walls",
+        "roads"
+    ],
+    "dc:subject_TGM": [
+        "Bicycles & tricycles",
+        "Roads",
+        "Guardrails",
+        "Landscape photographs"
+    ],
+    "dc:subject_RKD": [
+        "landscape",
+        "road in landscape",
+        "mountain landscape",
+        "bicycle"
+    ],
+    "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
-        "reasoning_effort": "medium"
+        "reasoning_effort": "HIGH"
     }
 }

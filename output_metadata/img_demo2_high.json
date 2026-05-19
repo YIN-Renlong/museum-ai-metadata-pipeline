@@ -1,23 +1,42 @@
 {
     "dc:identifier": "img_demo2.jpg",
-    "dc:title": "Bicycle view along a street beside historic stone walls and a church dome",
-    "dc:description": "Color street scene photographed from behind bicycle handlebars in the foreground, with the saddle, brake cable, and a blurred handlebar-mounted device visible at the bottom edge. A paved roadway curves through an urban area beside a long historic stone fortification or retaining wall on the left, topped with crenellations in places. Behind the wall rises a church or civic building with a prominent domed roof and small lantern. Several cars and a van travel along the road, while a pedestrian walks on the sidewalk near the wall. On the right side are a leafy tree, streetlights, bollards, and low commercial or residential buildings with outdoor seating. The image has warm late-afternoon sunlight, blue sky, and visible film grain typical of a digitized color negative.",
-    "dc:subject": [
-        "urban street",
-        "bicycle",
-        "handlebars",
-        "historic architecture",
-        "stone wall",
-        "fortification",
-        "church dome",
-        "roadway",
-        "cars",
-        "pedestrian",
-        "tree-lined street",
-        "European cityscape",
-        "color negative"
+    "dc:title": "Street view beside fortified wall and domed church",
+    "dc:description": "Urban street scene photographed from a low viewpoint behind a bicycle or scooter handlebar and saddle in the foreground. A paved roadway curves alongside a high stone defensive wall with crenellations at the upper left. Behind the wall and adjacent buildings, a church dome with a lantern rises above the roofline. Several automobiles and a small van travel or are parked along the road, and a pedestrian is visible near the wall. On the right side are a sidewalk, trees, streetlights, modern buildings, and an outdoor seating area. The scene combines historic masonry architecture with contemporary street infrastructure.",
+    "dc:subject_LCSH": [
+        "City and town life",
+        "Historic buildings",
+        "Church architecture",
+        "Fortification",
+        "Urban transportation"
     ],
+    "dc:subject_AAT": [
+        "streets",
+        "city walls",
+        "crenellations",
+        "domes",
+        "churches",
+        "automobiles",
+        "bicycles",
+        "streetlights"
+    ],
+    "dc:subject_TGM": [
+        "Street scenes",
+        "Cityscapes",
+        "Fortifications",
+        "Churches",
+        "Automobiles",
+        "Trees",
+        "Color photographs"
+    ],
+    "dc:subject_RKD": [
+        "stadsgezicht",
+        "kerkarchitectuur",
+        "vestingmuur",
+        "koepel",
+        "straatbeeld"
+    ],
+    "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
-        "reasoning_effort": "medium"
+        "reasoning_effort": "HIGH"
     }
 }
