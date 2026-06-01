@@ -13,6 +13,37 @@ Traditional museum workflows relied on specialized, narrow Vision APIs. However,
 
 Following this industry standard, this pipeline utilizes the **Azure OpenAI API (GPT-5.5 class)**. Unlike narrow AI, Multimodal LLMs possess zero-shot reasoning, allowing them to understand historical context, extract native OCR, and map outputs directly to institutional JSON schemas via strict Prompt Engineering.
 
+
+
+# The Flowchart
+
+    graph TD
+        A[Physical 35mm Negatives] -->|FADGI 4-Star Capture| B(Scene-Referred RAW File)
+        
+        B -->|Preservation Route| C[(ZFS NAS Storage)]
+        C -->|Output| D[Archival Information Package - AIP]
+        
+        B -->|Access Route| E(Programmatic Color Inversion)
+        E -->|Output| F[Access Copy JPEG - DIP]
+        
+        F -->|Python Middleware| G{Azure OpenAI API}
+        G -->|Zero-Shot Reasoning| H[Visual Context Analysis]
+        
+        H -->|Schema Validation| I[Dublin Core JSON]
+        I -->|LCSH| J[Broad Themes]
+        I -->|Getty AAT| K[Physical Objects]
+        I -->|TGM| L[Composition]
+        I -->|RKD| M[Dutch Art History]
+        
+        J --> N[Human-in-the-Loop Review]
+        K --> N
+        L --> N
+        M --> N
+        
+        N -->|Approval| O[(Museum CMS / Omeka S)]
+
+
+
 # 📊 AI Reasoning Resource Implications
 
 This table dynamically calculates the Token Usage, Financial Cost, and Processing Time based on the image resolution and OpenAI's Reasoning parameters.
