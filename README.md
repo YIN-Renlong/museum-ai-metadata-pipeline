@@ -17,7 +17,6 @@ Following this industry standard, this pipeline utilizes the **Azure OpenAI API 
 
 # The Flowchart
 
-~~~text
 ```mermaid
 graph TD
     A[Physical 35mm Negatives] -->|FADGI 4-Star Capture| B(Scene-Referred RAW File)
@@ -44,7 +43,6 @@ graph TD
     
     N -->|Approval| O[(Museum CMS / Omeka S)]
 ```
-~~~
 
 
 
