@@ -1,0 +1,33 @@
+{
+    "dc:identifier": "img_demo3.jpg",
+    "dc:title": "Loaded touring bicycle beside guardrail in agricultural landscape",
+    "dc:description": "A loaded touring bicycle is parked in the foreground against a metal roadside guardrail. The bicycle carries rear panniers, a rolled sleeping pad or mat secured to the front, multiple water bottles, and additional bags attached to the frame and rack. Behind the guardrail is an open harvested field with low vegetation, pale exposed earth mounds, distant rolling hills, and a broad sky with thin clouds. No people are visible.",
+    "dc:subject_LCSH": [
+        "Bicycle touring",
+        "Cycling",
+        "Rural landscapes",
+        "Agricultural landscapes"
+    ],
+    "dc:subject_AAT": [
+        "bicycles",
+        "panniers",
+        "guardrails",
+        "water bottles"
+    ],
+    "dc:subject_TGM": [
+        "Bicycles & tricycles",
+        "Fields",
+        "Hills",
+        "Landscape photographs"
+    ],
+    "dc:subject_RKD": [
+        "landscape",
+        "rural landscape",
+        "hilly landscape",
+        "bicycle"
+    ],
+    "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
+    "ai_provenance": {
+        "reasoning_effort": "HIGH"
+    }
+}

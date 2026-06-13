@@ -1,33 +1,43 @@
 {
     "dc:identifier": "img_demo3.jpg",
-    "dc:title": "Loaded touring bicycle beside guardrail in agricultural landscape",
-    "dc:description": "A loaded touring bicycle is parked in the foreground against a metal roadside guardrail. The bicycle carries rear panniers, a rolled sleeping pad or mat secured to the front, multiple water bottles, and additional bags attached to the frame and rack. Behind the guardrail is an open harvested field with low vegetation, pale exposed earth mounds, distant rolling hills, and a broad sky with thin clouds. No people are visible.",
+    "dc:title": "Touring Bicycle Beside a Rural Road and Harvested Fields",
+    "dc:description": "A loaded touring bicycle is parked in the foreground against a roadside metal guardrail. The bicycle has drop handlebars, a front cylindrical roll, water bottles on the frame, and large rear panniers or soft bags secured with straps and cords. Behind the guardrail are dry grasses and a broad, harvested field extending across rolling terrain. Low hills, scrub-covered mounds, and distant ridgelines appear on the horizon beneath an open sky with light cloud cover. No people are visible.",
     "dc:subject_LCSH": [
         "Bicycle touring",
         "Cycling",
-        "Rural landscapes",
+        "Rural roads",
         "Agricultural landscapes"
     ],
     "dc:subject_AAT": [
         "bicycles",
         "panniers",
         "guardrails",
-        "water bottles"
+        "fields",
+        "hills"
     ],
     "dc:subject_TGM": [
         "Bicycles & tricycles",
+        "Landscape photographs",
+        "Rural areas",
         "Fields",
-        "Hills",
-        "Landscape photographs"
+        "Roads"
     ],
     "dc:subject_RKD": [
         "landscape",
-        "rural landscape",
-        "hilly landscape",
+        "agricultural landscape",
+        "road",
         "bicycle"
     ],
     "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
-        "reasoning_effort": "HIGH"
+        "reasoning_effort": "HIGH",
+        "schema_validation": {
+            "status": "passed",
+            "validator": "pydantic",
+            "pydantic_version": "2.11.7",
+            "schema": "MuseumMetadataSchema",
+            "schema_version": "1.0.0",
+            "validated_at_utc": "2026-06-13T07:55:32Z"
+        }
     }
 }

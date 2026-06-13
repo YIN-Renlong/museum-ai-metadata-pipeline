@@ -1,42 +1,52 @@
 {
     "dc:identifier": "img_demo2.jpg",
-    "dc:title": "Street view beside fortified wall and domed church",
-    "dc:description": "Urban street scene photographed from a low viewpoint behind a bicycle or scooter handlebar and saddle in the foreground. A paved roadway curves alongside a high stone defensive wall with crenellations at the upper left. Behind the wall and adjacent buildings, a church dome with a lantern rises above the roofline. Several automobiles and a small van travel or are parked along the road, and a pedestrian is visible near the wall. On the right side are a sidewalk, trees, streetlights, modern buildings, and an outdoor seating area. The scene combines historic masonry architecture with contemporary street infrastructure.",
+    "dc:title": "Street view with fortified wall and domed church",
+    "dc:description": "Urban street scene photographed from a low roadside position, with an out-of-focus bicycle or scooter saddle and handlebars occupying the foreground. A curving paved roadway runs through the center of the image with several automobiles and a van in motion or parked along the street. At left, a large stone fortification or city wall with crenellations extends along the road, with a pedestrian visible near its base. Behind and above the wall is a church building with a ribbed dome and lantern. At right are a sidewalk, trees, streetlights, bollards, and low commercial or residential buildings, including an outdoor seating area. The image appears to document the relationship between historic masonry architecture and contemporary street traffic in an urban setting.",
     "dc:subject_LCSH": [
-        "City and town life",
-        "Historic buildings",
-        "Church architecture",
-        "Fortification",
+        "Streets",
+        "City walls",
+        "Church buildings",
         "Urban transportation"
     ],
     "dc:subject_AAT": [
-        "streets",
         "city walls",
-        "crenellations",
         "domes",
-        "churches",
+        "streets",
         "automobiles",
         "bicycles",
-        "streetlights"
+        "streetlights",
+        "sidewalks",
+        "battlements"
     ],
     "dc:subject_TGM": [
-        "Street scenes",
-        "Cityscapes",
-        "Fortifications",
+        "Streets",
+        "City walls",
         "Churches",
+        "Domes",
         "Automobiles",
+        "Bicycles & tricycles",
         "Trees",
-        "Color photographs"
+        "Street lights",
+        "Architectural photographs"
     ],
     "dc:subject_RKD": [
-        "stadsgezicht",
-        "kerkarchitectuur",
-        "vestingmuur",
-        "koepel",
-        "straatbeeld"
+        "street scene",
+        "city walls",
+        "church architecture",
+        "dome",
+        "townscape",
+        "urban topography"
     ],
     "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
-        "reasoning_effort": "HIGH"
+        "reasoning_effort": "HIGH",
+        "schema_validation": {
+            "status": "passed",
+            "validator": "pydantic",
+            "pydantic_version": "2.11.7",
+            "schema": "MuseumMetadataSchema",
+            "schema_version": "1.0.0",
+            "validated_at_utc": "2026-06-13T07:55:06Z"
+        }
     }
 }

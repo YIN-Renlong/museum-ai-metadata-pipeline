@@ -18,30 +18,79 @@ Following this industry standard, this pipeline utilizes the **Azure OpenAI API 
 # The Flowchart
 
 ```mermaid
-graph TD
-    A[Physical 35mm Negatives] -->|FADGI 4-Star Capture| B(Scene-Referred RAW File)
-    
-    B -->|Preservation Route| C[(ZFS NAS Storage)]
-    C -->|Output| D[Archival Information Package - AIP]
-    
-    B -->|Access Route| E(Programmatic Color Inversion)
-    E -->|Output| F[Access Copy JPEG - DIP]
-    
-    F -->|Python Middleware| G{Azure OpenAI API}
-    G -->|Zero-Shot Reasoning| H[Visual Context Analysis]
-    
-    H -->|Schema Validation| I[Dublin Core JSON]
-    I -->|LCSH| J[Broad Themes]
-    I -->|Getty AAT| K[Physical Objects]
-    I -->|TGM| L[Composition]
-    I -->|RKD| M[Dutch Art History]
-    
-    J --> N[Human-in-the-Loop Review]
-    K --> N
-    L --> N
-    M --> N
-    
-    N -->|Approval| O[(Museum CMS / Omeka S)]
+flowchart TD
+
+    A["1. Preparation<br/>Selection, survey, condition assessment,<br/>baseline cataloguing, scheduling,<br/>and digitisation preparation"]
+
+    A --> B["Physical 35mm Colour Negatives"]
+
+    B -->|FADGI 4-Star and Metamorfoze Full Capture| C["2. Capture<br/>Scene-referred, un-inverted<br/>RAW/DNG transmission capture"]
+
+    C -->|Preservation Route| D["3. Preservation Storage<br/>Repository or ZFS NAS storage"]
+
+    D --> E["Archival Information Package - AIP<br/>Preservation master + technical metadata<br/>+ preservation description information"]
+
+    C -->|Access Route| F["4. Derivative Processing<br/>Programmatic inversion and access rendering"]
+
+    F --> G["Access Copy JPEG or WebP - DIP<br/>Interpretive derivative with condition note:<br/>colours unverified"]
+
+    G --> H["5. AI-supported Metadata Generation<br/>Python middleware layer"]
+
+    H --> I["Azure OpenAI Multimodal LLM<br/>Visual analysis, OCR, and provisional<br/>Dublin Core metadata generation"]
+
+    I --> J["Raw Candidate JSON String"]
+
+    J --> K{"JSON Syntax Check<br/>json.loads"}
+
+    K -->|Parse failure| L["Human Triage<br/>Non-parseable LLM response saved<br/>for human review"]
+
+    K -->|Parse success| M{"Pydantic Schema Validation<br/>MuseumMetadataSchema"}
+
+    M -->|Validation failure| N["Exception-Based Triage<br/>Rejected output saved to human_triage folder<br/>Failure written to validation_audit.jsonl<br/>Not counted as successful generation"]
+
+    M -->|Validation pass| O["Validated Dublin Core JSON<br/>model_dump by_alias=True"]
+
+    O --> P["Embedded AI Provenance<br/>reasoning_effort + schema_validation"]
+
+    P --> Q["Validated Output Files<br/>output_metadata folder"]
+
+    P --> R["Validation Audit Log<br/>validation_audit.jsonl"]
+
+    P --> S["Evaluation Metrics<br/>evaluation_metrics.csv"]
+
+    Q --> T["Dublin Core Metadata Record<br/>dc:title, dc:description,<br/>condition_note, ai_provenance"]
+
+    T --> U1["dc:subject_LCSH<br/>Library of Congress Subject Headings"]
+
+    T --> U2["dc:subject_AAT<br/>Getty Art and Architecture Thesaurus"]
+
+    T --> U3["dc:subject_TGM<br/>Thesaurus for Graphic Materials"]
+
+    T --> U4["dc:subject_RKD<br/>RKD-aligned terminology"]
+
+    U1 --> V1["Broad Themes<br/>historical topics, activities,<br/>social concepts, places"]
+
+    U2 --> V2["Physical Objects<br/>artifacts, materials,<br/>architectural elements"]
+
+    U3 --> V3["Visual Motifs and Composition<br/>graphic elements, genres,<br/>photographic description"]
+
+    U4 --> V4["Art Historical and Topographical Terms<br/>European art history,<br/>places, iconography"]
+
+    V1 --> W["6. Access<br/>Human-in-the-loop curatorial review"]
+
+    V2 --> W
+
+    V3 --> W
+
+    V4 --> W
+
+    W -->|Approval| X["Museum CMS or Omeka S"]
+
+    L --> Y["Human Archivist Review"]
+
+    N --> Y
+
+    Y --> W
 ```
 
 
@@ -81,7 +130,269 @@ img_demo1.jpg,1280x1024,high,11.22,978,504,0.02001
 
 During the development of this PoC, the metadata generation pipeline went through two major iterations based on archival feedback and prompt-engineering tests. 
 
-### Version 2.0: The GLAM-Optimized Pipeline (Current Version)
+
+
+### **Version 3.0: Pydantic Middleware Validation and Exception-Based Triage (Current Version)**
+
+Version 3.0 introduces a critical architectural upgrade to the metadata pipeline: the system no longer treats syntactically valid LLM-generated JSON as automatically trustworthy museum metadata. Instead, every Azure OpenAI response is routed through a deterministic Python middleware layer using **Pydantic v2** before it can be saved as a successful output.
+
+This is a central architectural distinction in the project:
+
+> The prompt requests structured metadata, but Pydantic enforces structured metadata.
+
+The LLM is still instructed to return Dublin Core JSON, but the Python pipeline independently verifies whether the response conforms to the required institutional schema. This protects the downstream museum Collection Management System (CMS) from schema drift, such as a subject field being returned as a string instead of a list.
+
+---
+
+#### **Why Pydantic Validation Was Added**
+
+Earlier versions of the pipeline used `json.loads()` to parse the LLM output. However, valid JSON syntax does not guarantee valid museum metadata structure.
+
+For example, this is valid JSON:
+
+```json
+{
+    "dc:subject_LCSH": "Bicycle touring"
+}
+```
+
+But it is structurally invalid for this project, because `dc:subject_LCSH` must be a list of strings:
+
+```json
+{
+    "dc:subject_LCSH": [
+        "Bicycle touring"
+    ]
+}
+```
+
+Version 3.0 solves this problem by validating the parsed JSON against a strict Pydantic schema before saving the file.
+
+---
+
+#### **Validated Museum Metadata Schema**
+
+The Pydantic model `MuseumMetadataSchema` enforces the following required structure:
+
+| JSON Key          | Required Type | Description                                       |
+| ----------------- | ------------- | ------------------------------------------------- |
+| `dc:identifier`   | `str`         | Source image filename or archival identifier      |
+| `dc:title`        | `str`         | Provisional descriptive title                     |
+| `dc:description`  | `str`         | Objective visual description                      |
+| `dc:subject_LCSH` | `List[str]`   | Library of Congress Subject Headings              |
+| `dc:subject_AAT`  | `List[str]`   | Getty Art & Architecture Thesaurus terms          |
+| `dc:subject_TGM`  | `List[str]`   | Thesaurus for Graphic Materials terms             |
+| `dc:subject_RKD`  | `List[str]`   | RKD-aligned art historical or topographical terms |
+| `condition_note`  | `str`         | Archival condition and color reliability note     |
+| `ai_provenance`   | `dict`        | AI generation and validation provenance           |
+
+Because Dublin Core keys contain colons, such as `dc:title`, they cannot be used directly as Python variable names. The pipeline therefore uses Pydantic aliases:
+
+```python
+dc_title: StrictStr = Field(alias="dc:title")
+```
+
+After validation, the model is exported with the original Dublin Core keys:
+
+```python
+model_dump(by_alias=True)
+```
+
+This allows the Python code to remain valid while preserving museum-facing JSON keys such as `dc:title`, `dc:description`, and `dc:subject_LCSH`.
+
+---
+
+#### **Exception-Based Triage Mechanism**
+
+Version 3.0 implements a two-stage validation workflow:
+
+```text
+Azure OpenAI multimodal response
+        |
+        v
+Raw LLM response string
+        |
+        v
+json.loads()
+        |
+        |--- JSON parsing fails
+        |        |
+        |        v
+        |   human_triage/
+        |   validation_audit.jsonl
+        |
+        v
+Pydantic MuseumMetadataSchema validation
+        |
+        |--- validation passes
+        |        |
+        |        v
+        |   output_metadata/
+        |   validation_audit.jsonl
+        |   evaluation_metrics.csv
+        |
+        |--- validation fails
+                 |
+                 v
+            human_triage/
+            validation_audit.jsonl
+```
+
+This means that structurally flawed metadata is not silently accepted. Instead, it is automatically caught and routed to human review.
+
+If validation passes:
+
+- the validated JSON is saved to `output_metadata/`;
+- a successful validation event is written to `validation_audit.jsonl`;
+- Pydantic validation provenance is embedded inside `ai_provenance`;
+- the item is logged in `evaluation_metrics.csv`.
+
+If validation fails:
+
+- the output is not saved as successful metadata;
+- the item is not logged as a successful CSV generation;
+- the raw rejected output and validation errors are saved to `human_triage/`;
+- the failure is recorded in `validation_audit.jsonl`.
+
+This implements **Exception-Based Triage**: invalid machine output becomes a review case rather than a successful CMS-ready record.
+
+---
+
+#### **Validation Evidence and Audit Trail**
+
+Version 3.0 records validation evidence in several locations:
+
+| Location                 | Purpose                                                      |
+| ------------------------ | ------------------------------------------------------------ |
+| `output_metadata/*.json` | Contains only Pydantic-validated metadata records            |
+| `human_triage/*.json`    | Contains rejected LLM outputs and validation error details   |
+| `validation_audit.jsonl` | Machine-readable log of validation pass/fail events          |
+| `evaluation_metrics.csv` | Token, timing, and cost data for successful validated records |
+| `evaluation_summary.md`  | Summary of resource implications for successful records      |
+
+A successful validation event is also embedded directly inside the metadata JSON under `ai_provenance.schema_validation`.
+
+This creates both:
+
+1. a self-describing metadata file; and  
+2. an external validation audit trail.
+
+---
+
+#### **Example Version 3.0 Validated Output**
+
+The following example shows a Version 3.0 output file that successfully passed Pydantic validation.
+
+**File:** `img_demo1_high.json`
+
+```json
+{
+    "dc:identifier": "img_demo1.jpg",
+    "dc:title": "Traveler with loaded bicycle on shaded wooded road",
+    "dc:description": "A full-length view of an adult standing on a pale unpaved road beneath a dense canopy of trees. The person's face is obscured; they wear a sleeveless dark top, cropped trousers, socks, and low shoes. To the right, a bicycle with attached bags and gear leans against vegetation near a chain-link fence. A white sign on the fence reads: \"PROPRIETÀ UNIVERSITÀ AGRARIA DI ISOLA FARNESE.\" The road is bordered by earthen banks and thick foliage, with dappled sunlight, fallen leaves, and the road receding into the shaded distance.",
+    "dc:subject_LCSH": [
+        "Bicycle touring",
+        "Roads",
+        "Forests and forestry",
+        "Outdoor recreation"
+    ],
+    "dc:subject_AAT": [
+        "bicycles",
+        "panniers",
+        "roads",
+        "fences",
+        "signs",
+        "trees"
+    ],
+    "dc:subject_TGM": [
+        "Bicycles & tricycles",
+        "Roads",
+        "Trees",
+        "Signs (Notices)",
+        "Portrait photographs",
+        "Landscape photographs"
+    ],
+    "dc:subject_RKD": [
+        "landscape",
+        "wooded landscape",
+        "road",
+        "traveller",
+        "bicycle",
+        "Italy"
+    ],
+    "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
+    "ai_provenance": {
+        "reasoning_effort": "HIGH",
+        "schema_validation": {
+            "status": "passed",
+            "validator": "pydantic",
+            "pydantic_version": "2.11.7",
+            "schema": "MuseumMetadataSchema",
+            "schema_version": "1.0.0",
+            "validated_at_utc": "2026-06-13T07:56:02Z"
+        }
+    }
+}
+```
+
+The `schema_validation` block confirms that the output was not merely generated by the LLM, but also checked by the Python middleware layer before being saved.
+
+---
+
+#### **Example Validation Audit Record**
+
+In addition to embedding validation provenance inside the output JSON, the pipeline writes an external audit record to `validation_audit.jsonl`.
+
+A successful validation record looks like this:
+
+```json
+{"timestamp_utc":"2026-06-13T07:56:02Z","filename":"img_demo1.jpg","reasoning_effort":"high","status":"passed","validator":{"name":"pydantic","version":"2.11.7"},"schema":{"name":"MuseumMetadataSchema","version":"1.0.0"}}
+```
+
+If validation fails, the audit log records the error and links to the triage file:
+
+```json
+{"timestamp_utc":"2026-06-13T08:01:14Z","filename":"img_demo2.jpg","reasoning_effort":"high","status":"failed","validator":{"name":"pydantic","version":"2.11.7"},"schema":{"name":"MuseumMetadataSchema","version":"1.0.0"},"errors":[{"type":"list_type","loc":["dc:subject_LCSH"],"msg":"Input should be a valid list"}],"triage_file":"human_triage/img_demo2_high_schema_validation_failed.json"}
+```
+
+This gives the pipeline a durable, machine-readable validation history suitable for academic evaluation and museum workflow accountability.
+
+---
+
+#### **Important Limitation**
+
+Pydantic validation guarantees **structural correctness**, not curatorial truth.
+
+It can verify that:
+
+- required fields are present;
+- `dc:title` is a string;
+- `dc:subject_LCSH` is a list of strings;
+- `ai_provenance` is a dictionary;
+- unexpected top-level fields are rejected.
+
+However, Pydantic does not independently verify whether every vocabulary term is genuinely authorized by LCSH, Getty AAT, TGM, or RKD. Therefore, Version 3.0 should be understood as a **schema-safety layer**, not as a replacement for professional archival judgment.
+
+The final workflow remains human-in-the-loop:
+
+```text
+LLM generation
+        |
+        v
+Pydantic schema validation
+        |
+        v
+Human curatorial review
+        |
+        v
+Museum CMS / Omeka S ingestion
+```
+
+In this architecture, the LLM acts as a high-speed metadata generation layer, Pydantic acts as a deterministic structural safety gate, and the human archivist remains responsible for final curatorial approval.
+
+
+
+### Version 2.0: The GLAM-Optimized Pipeline
 
 Based on feedback regarding institutional standards, the system prompt was heavily upgraded to force the LLM's "High" reasoning engine to separate visual data into four distinct, formal GLAM ontologies. Additionally, an archival condition_note was injected to manage the ethical implications of color-shifting in digitized negatives.
 

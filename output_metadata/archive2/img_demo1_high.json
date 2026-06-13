@@ -1,0 +1,36 @@
+{
+    "dc:identifier": "img_demo1.jpg",
+    "dc:title": "Person with loaded bicycle on shaded rural road near Isola Farnese",
+    "dc:description": "A person stands near the center of a sunlit dirt or gravel road bordered by dense trees and undergrowth. The person's face is obscured or blurred; they wear a sleeveless top, cropped trousers, socks, and shoes. To the right, a bicycle is parked against vegetation and appears fitted with bags and travel equipment. A chain-link fence and a posted sign are visible on the right side; the sign includes Italian text reading in part, \"PROPRIET\u00c0 UNIVERSIT\u00c0 AGRARIA DI ISOLA FARNESE.\" The road recedes into a shaded tree-lined passage, with strong contrasts between sunlight and shadow across the foreground.",
+    "dc:subject_LCSH": [
+        "Roads",
+        "Cycling",
+        "Forests and forestry",
+        "Travel"
+    ],
+    "dc:subject_AAT": [
+        "bicycles",
+        "panniers",
+        "roads",
+        "fences",
+        "signs (declaratory or advertising artifacts)"
+    ],
+    "dc:subject_TGM": [
+        "Roads",
+        "Trees",
+        "Bicycles & tricycles",
+        "Signs (Notices)",
+        "Portrait photographs"
+    ],
+    "dc:subject_RKD": [
+        "landscape",
+        "wooded landscape",
+        "road",
+        "Italy",
+        "Isola Farnese"
+    ],
+    "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
+    "ai_provenance": {
+        "reasoning_effort": "HIGH"
+    }
+}

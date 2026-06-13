@@ -1,0 +1,4 @@
+{"timestamp_utc": "2026-06-13T07:54:34Z", "filename": "img_demo4.jpg", "reasoning_effort": "high", "status": "passed", "validator": {"name": "pydantic", "version": "2.11.7"}, "schema": {"name": "MuseumMetadataSchema", "version": "1.0.0"}}
+{"timestamp_utc": "2026-06-13T07:55:06Z", "filename": "img_demo2.jpg", "reasoning_effort": "high", "status": "passed", "validator": {"name": "pydantic", "version": "2.11.7"}, "schema": {"name": "MuseumMetadataSchema", "version": "1.0.0"}}
+{"timestamp_utc": "2026-06-13T07:55:32Z", "filename": "img_demo3.jpg", "reasoning_effort": "high", "status": "passed", "validator": {"name": "pydantic", "version": "2.11.7"}, "schema": {"name": "MuseumMetadataSchema", "version": "1.0.0"}}
+{"timestamp_utc": "2026-06-13T07:56:02Z", "filename": "img_demo1.jpg", "reasoning_effort": "high", "status": "passed", "validator": {"name": "pydantic", "version": "2.11.7"}, "schema": {"name": "MuseumMetadataSchema", "version": "1.0.0"}}

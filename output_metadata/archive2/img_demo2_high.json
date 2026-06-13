@@ -1,0 +1,42 @@
+{
+    "dc:identifier": "img_demo2.jpg",
+    "dc:title": "Street view beside fortified wall and domed church",
+    "dc:description": "Urban street scene photographed from a low viewpoint behind a bicycle or scooter handlebar and saddle in the foreground. A paved roadway curves alongside a high stone defensive wall with crenellations at the upper left. Behind the wall and adjacent buildings, a church dome with a lantern rises above the roofline. Several automobiles and a small van travel or are parked along the road, and a pedestrian is visible near the wall. On the right side are a sidewalk, trees, streetlights, modern buildings, and an outdoor seating area. The scene combines historic masonry architecture with contemporary street infrastructure.",
+    "dc:subject_LCSH": [
+        "City and town life",
+        "Historic buildings",
+        "Church architecture",
+        "Fortification",
+        "Urban transportation"
+    ],
+    "dc:subject_AAT": [
+        "streets",
+        "city walls",
+        "crenellations",
+        "domes",
+        "churches",
+        "automobiles",
+        "bicycles",
+        "streetlights"
+    ],
+    "dc:subject_TGM": [
+        "Street scenes",
+        "Cityscapes",
+        "Fortifications",
+        "Churches",
+        "Automobiles",
+        "Trees",
+        "Color photographs"
+    ],
+    "dc:subject_RKD": [
+        "stadsgezicht",
+        "kerkarchitectuur",
+        "vestingmuur",
+        "koepel",
+        "straatbeeld"
+    ],
+    "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
+    "ai_provenance": {
+        "reasoning_effort": "HIGH"
+    }
+}
