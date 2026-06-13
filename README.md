@@ -285,6 +285,8 @@ The following example shows a Version 3.0 output file that successfully passed P
 
 **File:** `img_demo1_high.json`
 
+![Touring Bicycle](input_images/img_demo1.jpg)
+
 ```json
 {
     "dc:identifier": "img_demo1.jpg",
