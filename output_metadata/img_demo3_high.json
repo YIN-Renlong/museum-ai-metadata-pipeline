@@ -1,31 +1,31 @@
 {
     "dc:identifier": "img_demo3.jpg",
-    "dc:title": "Loaded touring bicycle beside a rural guardrail",
-    "dc:description": "A touring bicycle equipped with drop handlebars, a rolled sleeping mat or pad at the front, multiple water bottles, and large rear panniers is parked in the foreground beside a metal roadside guardrail. Beyond the barrier is an open agricultural landscape with dry harvested fields, low shrubs, pale earth mounds, and distant rolling hills under a broad sky with thin clouds. No people are visible. The composition emphasizes the stationary bicycle and travel gear against an expansive rural setting.",
+    "dc:title": "Loaded touring bicycle beside a rural field",
+    "dc:description": "A loaded touring bicycle is parked in the foreground beside a metal roadside guardrail. The bicycle carries rear panniers, a rolled sleeping mat or foam pad strapped to the front, water bottles mounted within the frame, and additional small bags attached to the handlebars and frame. Behind the guardrail is a dry, harvested agricultural field extending across gently rolling terrain. Low shrubs, eroded mounds, distant hills, and a broad sky with thin clouds occupy the background. No people are visible.",
     "dc:subject_LCSH": [
         "Bicycle touring",
-        "Bicycles and bicycling",
+        "Cycling",
         "Agricultural landscapes",
-        "Rural landscapes"
+        "Roads"
     ],
     "dc:subject_AAT": [
         "bicycles",
         "panniers",
+        "water bottles",
         "guardrails",
-        "water bottles"
+        "fields"
     ],
     "dc:subject_TGM": [
         "Bicycles & tricycles",
-        "Fields",
         "Guardrails",
-        "Landscape photographs",
-        "Travel photographs"
+        "Fields",
+        "Landscape photographs"
     ],
     "dc:subject_RKD": [
-        "landschap",
-        "akkerland",
-        "heuvelachtig landschap",
-        "wegberm"
+        "landschap / landscape",
+        "agrarisch landschap / agricultural landscape",
+        "weg / road",
+        "vervoermiddel / means of transport"
     ],
     "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
@@ -36,7 +36,7 @@
             "pydantic_version": "2.11.7",
             "schema": "MuseumMetadataSchema",
             "schema_version": "1.0.0",
-            "validated_at_utc": "2026-06-14T07:59:27Z"
+            "validated_at_utc": "2026-06-14T08:08:27Z"
         }
     }
 }

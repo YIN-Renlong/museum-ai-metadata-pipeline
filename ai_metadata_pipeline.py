@@ -406,7 +406,8 @@ async def process_image_effort(client, filename, effort):
 
                 'dc:subject_TGM': Use ONLY Thesaurus for Graphic Materials terms (visual elements, photographic genres, compositional features).
 
-                'dc:subject_RKD': Use ONLY terms aligned with the RKD (Netherlands Institute for Art History) classification (European topographical descriptors, art historical iconography, structural classifications). THESE TERMS MUST BE STRICTLY IN DUTCH."""
+                'dc:subject_RKD': Use ONLY terms aligned with the RKD (Netherlands Institute for Art History) classification (European topographical descriptors, art historical iconography, structural classifications). PROVIDE THESE TERMS IN BOTH DUTCH AND ENGLISH, separated by a slash (e.g., "stadsgezicht / cityscape" or "portret / portrait")."""
+
 
             },
             {

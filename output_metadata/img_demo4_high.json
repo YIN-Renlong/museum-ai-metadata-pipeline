@@ -1,34 +1,32 @@
 {
     "dc:identifier": "img_demo4.jpg",
-    "dc:title": "Touring bicycle beside a rural road",
-    "dc:description": "A paved two-lane road extends from the foreground into the distance through a dry rural landscape. A loaded bicycle with bags is parked at the left shoulder, leaning against a metal guardrail in front of a concrete retaining wall. White road-edge and center markings define the roadway. Vegetation lines both sides, with fence posts and open fields to the right and low hills or mountains visible on the horizon beneath a mostly clear sky. No people are visible.",
+    "dc:title": "Touring bicycle beside a rural road with distant hills",
+    "dc:description": "A paved two-lane road extends from the foreground toward the center distance through a dry rural landscape. A loaded touring bicycle leans against a metal guardrail at the left edge of the road, adjacent to a concrete retaining wall and roadside vegetation. The roadway is marked with white edge and center lines; a fence line, shrubs, and open fields appear on the right. Low hills or mountains are visible on the horizon beneath a mostly clear sky. No people or vehicles are prominent in the scene.",
     "dc:subject_LCSH": [
+        "Roads",
         "Bicycle touring",
-        "Rural roads",
-        "Cycling",
+        "Rural transportation",
         "Landscape"
     ],
     "dc:subject_AAT": [
+        "roads",
         "bicycles",
-        "panniers",
         "guardrails",
         "retaining walls",
-        "roads",
         "fences"
     ],
     "dc:subject_TGM": [
         "Roads",
         "Bicycles & tricycles",
         "Guardrails",
-        "Hills",
-        "Landscapes"
+        "Rural areas",
+        "Landscape photographs"
     ],
     "dc:subject_RKD": [
-        "landschap",
-        "weg",
-        "berglandschap",
-        "fiets",
-        "omheining"
+        "landschap / landscape",
+        "landelijk landschap / rural landscape",
+        "weg / road",
+        "berglandschap / mountain landscape"
     ],
     "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
@@ -39,7 +37,7 @@
             "pydantic_version": "2.11.7",
             "schema": "MuseumMetadataSchema",
             "schema_version": "1.0.0",
-            "validated_at_utc": "2026-06-14T07:58:45Z"
+            "validated_at_utc": "2026-06-14T08:07:47Z"
         }
     }
 }
