@@ -290,37 +290,34 @@ The following example shows a Version 3.0 output file that successfully passed P
 ```json
 {
     "dc:identifier": "img_demo1.jpg",
-    "dc:title": "Traveler with loaded bicycle on shaded wooded road",
-    "dc:description": "A full-length view of an adult standing on a pale unpaved road beneath a dense canopy of trees. The person's face is obscured; they wear a sleeveless dark top, cropped trousers, socks, and low shoes. To the right, a bicycle with attached bags and gear leans against vegetation near a chain-link fence. A white sign on the fence reads: \"PROPRIETÀ UNIVERSITÀ AGRARIA DI ISOLA FARNESE.\" The road is bordered by earthen banks and thick foliage, with dappled sunlight, fallen leaves, and the road receding into the shaded distance.",
+    "dc:title": "Person with loaded bicycle on wooded road near Isola Farnese sign",
+    "dc:description": "A full-length view of an unidentified person standing on a light-colored unpaved road bordered by dense trees and undergrowth. The person’s face is obscured and they are positioned near the center-right of the frame. A loaded touring bicycle leans at the roadside beside vegetation and a wire fence, with bags and gear secured to the rear rack. The road runs into the distance beneath an overhanging tree canopy, with earthen banks on both sides and patches of sunlight and shade across the ground. At the far right, a posted sign on the fence reads in part: “PROPRIETÀ UNIVERSITÀ AGRARIA DI ISOLA FARNESE.”",
     "dc:subject_LCSH": [
-        "Bicycle touring",
         "Roads",
-        "Forests and forestry",
-        "Outdoor recreation"
+        "Bicycles and bicycling",
+        "Travel",
+        "Forests and forestry"
     ],
     "dc:subject_AAT": [
         "bicycles",
-        "panniers",
         "roads",
+        "signs (declaratory or advertising artifacts)",
         "fences",
-        "signs",
-        "trees"
+        "trees (plants)"
     ],
     "dc:subject_TGM": [
+        "Dirt roads",
         "Bicycles & tricycles",
-        "Roads",
         "Trees",
         "Signs (Notices)",
-        "Portrait photographs",
-        "Landscape photographs"
+        "Portrait photographs"
     ],
     "dc:subject_RKD": [
-        "landscape",
-        "wooded landscape",
-        "road",
-        "traveller",
-        "bicycle",
-        "Italy"
+        "landschap / landscape",
+        "bosgezicht / forest view",
+        "weg / road",
+        "fiets / bicycle",
+        "figuur in landschap / figure in landscape"
     ],
     "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
@@ -331,7 +328,7 @@ The following example shows a Version 3.0 output file that successfully passed P
             "pydantic_version": "2.11.7",
             "schema": "MuseumMetadataSchema",
             "schema_version": "1.0.0",
-            "validated_at_utc": "2026-06-13T07:56:02Z"
+            "validated_at_utc": "2026-06-14T08:08:56Z"
         }
     }
 }
