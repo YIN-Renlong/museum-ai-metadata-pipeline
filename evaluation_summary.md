@@ -4,4 +4,4 @@ This table dynamically calculates the Token Usage, Financial Cost, and Processin
 
 | Reasoning Effort | Avg Time/Image | Avg Prompt Tokens | Avg Completion Tokens | Avg Cost/Image | Extrapolated 100k Cost | Extrapolated 100k Time |
 |------------------|----------------|-------------------|-----------------------|----------------|------------------------|------------------------|
-| **HIGH** | 25.76s | 1403 | 1120 | $0.04064 | **$4,064.13** | 716 hours |
+| **HIGH** | 21.83s | 1413 | 1400 | $0.04909 | **$4,909.12** | 606 hours |

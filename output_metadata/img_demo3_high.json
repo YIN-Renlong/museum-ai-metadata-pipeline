@@ -1,32 +1,31 @@
 {
     "dc:identifier": "img_demo3.jpg",
-    "dc:title": "Touring Bicycle Beside a Rural Road and Harvested Fields",
-    "dc:description": "A loaded touring bicycle is parked in the foreground against a roadside metal guardrail. The bicycle has drop handlebars, a front cylindrical roll, water bottles on the frame, and large rear panniers or soft bags secured with straps and cords. Behind the guardrail are dry grasses and a broad, harvested field extending across rolling terrain. Low hills, scrub-covered mounds, and distant ridgelines appear on the horizon beneath an open sky with light cloud cover. No people are visible.",
+    "dc:title": "Loaded touring bicycle beside a rural guardrail",
+    "dc:description": "A touring bicycle equipped with drop handlebars, a rolled sleeping mat or pad at the front, multiple water bottles, and large rear panniers is parked in the foreground beside a metal roadside guardrail. Beyond the barrier is an open agricultural landscape with dry harvested fields, low shrubs, pale earth mounds, and distant rolling hills under a broad sky with thin clouds. No people are visible. The composition emphasizes the stationary bicycle and travel gear against an expansive rural setting.",
     "dc:subject_LCSH": [
         "Bicycle touring",
-        "Cycling",
-        "Rural roads",
-        "Agricultural landscapes"
+        "Bicycles and bicycling",
+        "Agricultural landscapes",
+        "Rural landscapes"
     ],
     "dc:subject_AAT": [
         "bicycles",
         "panniers",
         "guardrails",
-        "fields",
-        "hills"
+        "water bottles"
     ],
     "dc:subject_TGM": [
         "Bicycles & tricycles",
-        "Landscape photographs",
-        "Rural areas",
         "Fields",
-        "Roads"
+        "Guardrails",
+        "Landscape photographs",
+        "Travel photographs"
     ],
     "dc:subject_RKD": [
-        "landscape",
-        "agricultural landscape",
-        "road",
-        "bicycle"
+        "landschap",
+        "akkerland",
+        "heuvelachtig landschap",
+        "wegberm"
     ],
     "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
@@ -37,7 +36,7 @@
             "pydantic_version": "2.11.7",
             "schema": "MuseumMetadataSchema",
             "schema_version": "1.0.0",
-            "validated_at_utc": "2026-06-13T07:55:32Z"
+            "validated_at_utc": "2026-06-14T07:59:27Z"
         }
     }
 }

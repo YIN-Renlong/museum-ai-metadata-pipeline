@@ -1,36 +1,35 @@
 {
     "dc:identifier": "img_demo1.jpg",
-    "dc:title": "Traveler with loaded bicycle on shaded wooded road",
-    "dc:description": "A full-length view of an adult standing on a pale unpaved road beneath a dense canopy of trees. The person's face is obscured; they wear a sleeveless dark top, cropped trousers, socks, and low shoes. To the right, a bicycle with attached bags and gear leans against vegetation near a chain-link fence. A white sign on the fence reads: \"PROPRIETÀ UNIVERSITÀ AGRARIA DI ISOLA FARNESE.\" The road is bordered by earthen banks and thick foliage, with dappled sunlight, fallen leaves, and the road receding into the shaded distance.",
+    "dc:title": "Wooded road with touring bicycle and property sign",
+    "dc:description": "A single adult figure stands on an unpaved rural road bordered by dense trees and undergrowth. The person is positioned slightly right of center, facing the camera, with the face obscured, and wears sleeveless upper clothing, cropped trousers, socks, and shoes. A loaded touring bicycle rests nearby against vegetation and a fence on the right side of the road; attached bags and a cylindrical roll are visible on the bicycle. The road recedes into a shaded, tunnel-like corridor formed by overhanging branches and earthen banks. On the right, a chain-link fence supports a white sign reading “PROPRIETÀ UNIVERSITÀ AGRARIA DI ISOLA FARNESE.” Fallen leaves and dappled sunlight are visible on the road surface.",
     "dc:subject_LCSH": [
         "Bicycle touring",
         "Roads",
         "Forests and forestry",
-        "Outdoor recreation"
+        "Travel"
     ],
     "dc:subject_AAT": [
         "bicycles",
         "panniers",
-        "roads",
-        "fences",
-        "signs",
-        "trees"
+        "chain-link fences",
+        "signs (declaratory or advertising artifacts)",
+        "unpaved roads"
     ],
     "dc:subject_TGM": [
         "Bicycles & tricycles",
         "Roads",
         "Trees",
         "Signs (Notices)",
-        "Portrait photographs",
-        "Landscape photographs"
+        "Travelers",
+        "Color photographs"
     ],
     "dc:subject_RKD": [
-        "landscape",
-        "wooded landscape",
-        "road",
-        "traveller",
-        "bicycle",
-        "Italy"
+        "boslandschap",
+        "landweg",
+        "fietser",
+        "fiets",
+        "hekwerk",
+        "waarschuwingsbord"
     ],
     "condition_note": "Colors unverified; image programmatically inverted from faded source negative.",
     "ai_provenance": {
@@ -41,7 +40,7 @@
             "pydantic_version": "2.11.7",
             "schema": "MuseumMetadataSchema",
             "schema_version": "1.0.0",
-            "validated_at_utc": "2026-06-13T07:56:02Z"
+            "validated_at_utc": "2026-06-14T07:59:58Z"
         }
     }
 }
